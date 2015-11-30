@@ -89,19 +89,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#树状数组可以用于快速从经常改变值得数组中求出某一部分的元素<br>  用了几次树状数组，开始几次总也有不明白的地方，倒不是不会用，关键在于总感觉触摸不到精髓。<br>现在写下一些个人的小想法。</p>
-<blockquote>
+        <h1 id="树状数组可以用于快速从经常改变值得数组中求出某一部分的元素">树状数组可以用于快速从经常改变值得数组中求出某一部分的元素</h1><p>  用了几次树状数组，开始几次总也有不明白的地方，倒不是不会用，关键在于总感觉触摸不到精髓。</p>
+<h2 id="现在写下一些个人的小想法。">现在写下一些个人的小想法。</h2><blockquote>
 <ul>
 <li>树状数组的核心在于标号末尾的0的个数，主要决定了控制范围，（如两个0是四个数的和，三个0是八个数的和，事实上每多出一个0的时候，控制的范围就增加了一倍，原来范围内的修改都要向计算原本和增加范围的和的数据进行更新，当然没有出现范围扩增时候也要向上更新）</li>
 <li>对于一次求和操作，总是只能求出<strong>前若干项的和</strong></li>
 <li>每次有更改的时候逐级向上修改，从图中可以清楚的看出来，每当末尾多出现一个0的时候就要进行一次汇总操作</li>
 </ul>
 </blockquote>
+<p><img src="http://dongxicheng.org/wp-content/uploads/2011/04/binary_indexed_tree2.jpg" alt="cmd-markdown-logo"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/20/My-New-Post/" data-id="cihlulwvk00008gtjrn1k84wq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/20/My-New-Post/" data-id="cihlurxfl0000ugtj4xzc650h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -146,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/10/hello-world/" data-id="cihlulwwv00018gtjyc56aau4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/10/hello-world/" data-id="cihlurxgw0001ugtjqf1yx9hh" class="article-share-link">Share</a>
       
       
     </footer>
