@@ -18,7 +18,7 @@
 
 树状数组的核心在于标号末尾的0的个数，主要决定了控制范围，（如两个0是四个数的和，三个0是八个数的和，事实上每多出一个0的时候，控制的范围就增加了一倍，原来范围内的修改都要向计算原本和增加范围的和的数据进行更新，当然没">
 <meta property="og:image" content="http://dongxicheng.org/wp-content/uploads/2011/04/binary_indexed_tree2.jpg">
-<meta property="og:updated_time" content="2015-11-30T11:07:56.078Z">
+<meta property="og:updated_time" content="2015-11-30T11:47:30.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于树状数组">
 <meta name="twitter:description" content="树状数组可以用于快速从经常改变值得数组中求出某一部分的元素  用了几次树状数组，开始几次总也有不明白的地方，倒不是不会用，关键在于总感觉触摸不到精髓。
@@ -106,12 +106,13 @@
 <li>每次有更改的时候逐级向上修改，从图中可以清楚的看出来，每当末尾多出现一个0的时候就要进行一次汇总操作</li>
 </ul>
 </blockquote>
+<p>‘’’C++<br>    void Insert(int i, int value)<br>    {<br>        ++i;<br>        while (i &lt; tree.size())<br>        {<br>            tree[i] += value;<br>            i += i&amp;(-i);<br>        }<br>    }<br>‘’’<br>其中‘<strong> i += i&amp;(-i); </strong>‘，为什么要‘+=‘后面的东西呢？前面说过除了本身，每增加一次0的时候会计算一次和（对于增加一次0其实也就是乘上2），<strong>乘上2</strong>就是加一次自己控制的范围</p>
 <p><img src="http://dongxicheng.org/wp-content/uploads/2011/04/binary_indexed_tree2.jpg" alt="cmd-markdown-logo"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/20/My-New-Post/" data-id="cihlurxfl0000ugtj4xzc650h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/20/My-New-Post/" data-id="cihlw5y140000lgtjpf4zdlzc" class="article-share-link">Share</a>
       
       
     </footer>

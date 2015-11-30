@@ -97,12 +97,13 @@
 <li>每次有更改的时候逐级向上修改，从图中可以清楚的看出来，每当末尾多出现一个0的时候就要进行一次汇总操作</li>
 </ul>
 </blockquote>
+<p>‘’’C++<br>    void Insert(int i, int value)<br>    {<br>        ++i;<br>        while (i &lt; tree.size())<br>        {<br>            tree[i] += value;<br>            i += i&amp;(-i);<br>        }<br>    }<br>‘’’<br>其中‘<strong> i += i&amp;(-i); </strong>‘，为什么要‘+=‘后面的东西呢？前面说过除了本身，每增加一次0的时候会计算一次和（对于增加一次0其实也就是乘上2），<strong>乘上2</strong>就是加一次自己控制的范围</p>
 <p><img src="http://dongxicheng.org/wp-content/uploads/2011/04/binary_indexed_tree2.jpg" alt="cmd-markdown-logo"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/20/My-New-Post/" data-id="cihlurxfl0000ugtj4xzc650h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/20/My-New-Post/" data-id="cihlw5y140000lgtjpf4zdlzc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/11/10/hello-world/" data-id="cihlurxgw0001ugtjqf1yx9hh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/11/10/hello-world/" data-id="cihlw5y2f0001lgtjqqdkmeta" class="article-share-link">Share</a>
       
       
     </footer>
