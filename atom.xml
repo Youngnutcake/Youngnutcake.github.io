@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-05-12T13:29:39.003Z</updated>
+  <updated>2017-05-12T13:57:29.259Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,14 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>LeetCode95、99</title>
     <link href="http://yoursite.com/2017/05/12/leetcode17_5_12/"/>
     <id>http://yoursite.com/2017/05/12/leetcode17_5_12/</id>
-    <published>2017-05-12T13:31:25.756Z</published>
-    <updated>2017-05-12T13:29:39.003Z</updated>
+    <published>2017-05-12T13:06:46.000Z</published>
+    <updated>2017-05-12T13:57:29.259Z</updated>
     
-    <content type="html"><![CDATA[<p>title: LeetCode95、99<br>date: 2017-05-12 21:06:46<br>tags: [算法,leetcode]</p>
-<h1 id="LeetCode_95">LeetCode 95</h1><h2 id="这道题是和不同的二叉树的个数问题相关的(Unique_Binary_Search_Trees),不同之处在于问题一中只要求统计个数，而问题二中需要构造出所有的二叉树。">这道题是和不同的二叉树的个数问题相关的(<a href="https://leetcode.com/problems/unique-binary-search-trees/#/description" target="_blank" rel="external">Unique Binary Search Trees</a>),不同之处在于问题一中只要求统计个数，而问题二中需要构造出所有的二叉树。</h2><h3 id="问题一用DP的方法是很容易实现的，是因为二叉树固定数字生成的二叉树是固定的，一个二叉树的种类由它可能的左子树和右子树数目决定的，所以DP轻松解决。">问题一用DP的方法是很容易实现的，是因为二叉树固定数字生成的二叉树是固定的，一个二叉树的种类由它可能的左子树和右子树数目决定的，所以DP轻松解决。</h3><h3 id="问题二我陷入了用DP的思路，后来事实证明DP也是可以完成的。但是我看到的更好的解法是用自上而下递归的策略。调用helper(1,n)完成。">问题二我陷入了用DP的思路，后来事实证明DP也是可以完成的。但是我看到的更好的解法是用自上而下递归的策略。调用<code>helper(1,n)</code>完成。</h3><pre><code><span class="built_in">vector</span>&lt;TreeNode*&gt; helper(<span class="keyword">int</span> start, <span class="keyword">int</span> end) {
+    <content type="html"><![CDATA[<h1 id="LeetCode_95">LeetCode 95</h1><h2 id="这道题是和不同的二叉树的个数问题相关的(Unique_Binary_Search_Trees),不同之处在于问题一中只要求统计个数，而问题二中需要构造出所有的二叉树。">这道题是和不同的二叉树的个数问题相关的(<a href="https://leetcode.com/problems/unique-binary-search-trees/#/description" target="_blank" rel="external">Unique Binary Search Trees</a>),不同之处在于问题一中只要求统计个数，而问题二中需要构造出所有的二叉树。</h2><h3 id="问题一用DP的方法是很容易实现的，是因为二叉树固定数字生成的二叉树是固定的，一个二叉树的种类由它可能的左子树和右子树数目决定的，所以DP轻松解决。">问题一用DP的方法是很容易实现的，是因为二叉树固定数字生成的二叉树是固定的，一个二叉树的种类由它可能的左子树和右子树数目决定的，所以DP轻松解决。</h3><h3 id="问题二我陷入了用DP的思路，后来事实证明DP也是可以完成的。但是我看到的更好的解法是用自上而下递归的策略。调用helper(1,n)完成。">问题二我陷入了用DP的思路，后来事实证明DP也是可以完成的。但是我看到的更好的解法是用自上而下递归的策略。调用<code>helper(1,n)</code>完成。</h3><pre><code><span class="built_in">vector</span>&lt;TreeNode*&gt; helper(<span class="keyword">int</span> start, <span class="keyword">int</span> end) {
     <span class="built_in">vector</span>&lt;TreeNode *&gt; results;
     <span class="keyword">if</span> (start&gt;end)
     {
@@ -58,11 +57,14 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: LeetCode95、99&lt;br&gt;date: 2017-05-12 21:06:46&lt;br&gt;tags: [算法,leetcode]&lt;/p&gt;
-&lt;h1 id=&quot;LeetCode_95&quot;&gt;LeetCode 95&lt;/h1&gt;&lt;h2 id=&quot;这道题是和不同的二叉树的个数问
+      &lt;h1 id=&quot;LeetCode_95&quot;&gt;LeetCode 95&lt;/h1&gt;&lt;h2 id=&quot;这道题是和不同的二叉树的个数问题相关的(Unique_Binary_Search_Trees),不同之处在于问题一中只要求统计个数，而问题二中需要构造出所有的二叉树。&quot;&gt;这道题是和不同的二叉
     
     </summary>
     
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
