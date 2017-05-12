@@ -137,6 +137,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode17_5_12" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: LeetCode95、99<br>date: 2017-05-12 21:06:46<br>tags: [算法,leetcode]</p>
+<h1 id="LeetCode_95">LeetCode 95</h1><h2 id="这道题是和不同的二叉树的个数问题相关的(Unique_Binary_Search_Trees),不同之处在于问题一中只要求统计个数，而问题二中需要构造出所有的二叉树。">这道题是和不同的二叉树的个数问题相关的(<a href="https://leetcode.com/problems/unique-binary-search-trees/#/description" target="_blank" rel="external">Unique Binary Search Trees</a>),不同之处在于问题一中只要求统计个数，而问题二中需要构造出所有的二叉树。</h2><h3 id="问题一用DP的方法是很容易实现的，是因为二叉树固定数字生成的二叉树是固定的，一个二叉树的种类由它可能的左子树和右子树数目决定的，所以DP轻松解决。">问题一用DP的方法是很容易实现的，是因为二叉树固定数字生成的二叉树是固定的，一个二叉树的种类由它可能的左子树和右子树数目决定的，所以DP轻松解决。</h3><h3 id="问题二我陷入了用DP的思路，后来事实证明DP也是可以完成的。但是我看到的更好的解法是用自上而下递归的策略。调用helper(1,n)完成。">问题二我陷入了用DP的思路，后来事实证明DP也是可以完成的。但是我看到的更好的解法是用自上而下递归的策略。调用<code>helper(1,n)</code>完成。</h3><pre><code><span class="built_in">vector</span>&lt;TreeNode*&gt; helper(<span class="keyword">int</span> start, <span class="keyword">int</span> end) {
+    <span class="built_in">vector</span>&lt;TreeNode *&gt; results;
+    <span class="keyword">if</span> (start&gt;end)
+    {
+        results.push_back(<span class="literal">NULL</span>);
+        <span class="keyword">return</span> results;
+    }
+
+    <span class="keyword">for</span> (<span class="keyword">int</span> k = start; k &lt;= end; k++)
+    {
+        <span class="built_in">vector</span>&lt;TreeNode *&gt; left = helper(start, k - <span class="number">1</span>);
+        <span class="built_in">vector</span>&lt;TreeNode *&gt; right = helper(k + <span class="number">1</span>, end);
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;left.size(); i++)
+        {
+            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;right.size(); j++)
+            {
+                TreeNode * root = <span class="keyword">new</span> TreeNode(k);
+                root-&gt;left = left[i];
+                root-&gt;right = right[j];
+                results.push_back(root);
+            }
+        }
+    }
+    <span class="keyword">return</span> results;
+} 
+</code></pre><h3 id="同时也说明一下另外一种解法。我们对于某一次生成有如下考虑">同时也说明一下另外一种解法。我们对于某一次生成有如下考虑</h3><ol>
+<li>新的根只需要把之前的根作为自己的左子树。</li>
+<li>新的节点不作为根加入之前的树，由于它是最大的肯定是一路向右。所以可以遍历之前的树，对于每一棵树，从根的右节点逐步下移，截断处剩下的部分作为新节点的左子树，直到最右侧的叶子节点为止。</li>
+</ol>
+<h1 id="LeetCode_99">LeetCode 99</h1><h2 id="题意描述：一个二叉树中的两个节点由于某些错误被交换了，找出他们并恢复二叉树。（空间复杂度上O(n)很容易，但是O(1)是不容易实现的）">题意描述：一个二叉树中的两个节点由于某些错误被交换了，找出他们并恢复二叉树。（空间复杂度上O<sub>(n)</sub>很容易，但是O<sub>(1)</sub>是不容易实现的）</h2><h3 id="这道题一开始我的思路是分别搜索一个根的左子树和右子树，比较根和左右节点关系是否正确，后来又考虑了交换的节点在树的一侧的情况和不在同一侧的情况，最后没有AC掉这道题。">这道题一开始我的思路是分别搜索一个根的左子树和右子树，比较根和左右节点关系是否正确，后来又考虑了交换的节点在树的一侧的情况和不在同一侧的情况，最后没有AC掉这道题。</h3><pre><code>这道题正确的思路应该考虑二叉树的性质，二叉树在中序遍历的时候(<span class="keyword">in</span> <span class="keyword">order</span>）数据的输出是从小到大的，
+那么采用先序遍历二叉树的方式，就相当于顺序遍历数组发现被交换的两个数。
+</code></pre><h3 id="在写这道题的代码的时候要结合二叉树来写，熟悉二叉树中序遍历的形式，尤其是对于第一个节点不存在先前节点，深度优先搜索它的左子树为空后，第一个节点可以作为先前节点，方便后续遍历。">在写这道题的代码的时候要结合二叉树来写，熟悉二叉树中序遍历的形式，尤其是对于第一个节点不存在先前节点，深度优先搜索它的左子树为空后，第一个节点可以作为先前节点，方便后续遍历。</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/12/leetcode17_5_12/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-My-New-Post" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -268,7 +335,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 YoungSC
+    		&copy; 2017 YoungSC
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
